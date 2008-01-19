@@ -1,0 +1,16 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/01_initializing.t
+t/02_method_same_session.t
+t/03_method_other_session.t
+t/04_event_same_session.t
+t/05_event_other_session.t
+t/06_val_errors_and_special_args.t
+t/98_pod_coverage.t
+t/99_pod.t
+t/test1.html
+lib/POE/Component/WebService/Validator/HTML/W3C.pm
+examples/val.pl
+META.yml                                 Module meta-data (added by MakeMaker)

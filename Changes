@@ -1,0 +1,6 @@
+Revision history for Perl extension POE::Component::WebService::Validator::HTML::W3C.
+
+0.01  Mon Jan 14 22:52:39 2008
+	- original version; created by h2xs 1.23 with options
+		-X --skip-exporter --skip-autoloader -v 0.01 -n POE::Component::WebService::Validator::HTML::W3C
+
