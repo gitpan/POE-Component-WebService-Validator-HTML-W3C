@@ -53,6 +53,13 @@ sub _start {
 
 sub validated {
     my ( $kernel, $input ) = @_[ KERNEL, ARG0 ];
+
+    if ( $ENV{AUTOMATED_TESTING} ) {
+        use Data::Dumper;
+        
+        print "Auto-smoker detected. Going to dump `\$input` just in case\n";
+        print Dumper( $input );
+    }
     
     SKIP: {
         if ( $input->{validator_error} ) {
