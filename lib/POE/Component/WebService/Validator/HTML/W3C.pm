@@ -4,7 +4,7 @@ use 5.008008;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use POE qw( Wheel::Run  Filter::Reference  Filter::Line);
 use Carp;
@@ -249,18 +249,32 @@ sub _validate_wheel {
                     qw(
                         is_valid
                         num_errors
-                        errors
                     )
                 }
                 = (
                     $val->is_valid,
                     $val->num_errors,
-                    $val->errors,
                 );
-
-                if ( $req->{get_warnings} ) {
-                    $req->{'warnings'}   = $val->warnings;
+                
+                $req->{errors} = undef;
+                foreach my $error ( @{ $val->errors || [] } ) {
+                    push @{ $req->{errors} }, {
+                        line => $error->line,
+                        col  => $error->col,
+                        msg  => $error->msg,
+                    };
                 }
+                if ( $req->{get_warnings} ) {
+                    $req->{'warnings'} = undef;
+                    foreach my $warning ( @{ $val->warnings || [] } ) {
+                        push @{ $req->{'warnings'} }, {
+                            line => $warning->line,
+                            col  => $warning->col,
+                            msg  => $warning->msg,
+                        }
+                    }
+                }
+            
             }
             else {
                 $req->{validator_error} = $val->validator_error;
@@ -530,12 +544,11 @@ Takes no arguments. Tells the component to shut itself down.
     
     $VAR1 = {
           'errors' => [
-                        bless( {
+                        {
                                  'msg' => 'no document type declaration; implying "<!DOCTYPE HTML SYSTEM>"',
                                  'col' => '0',
                                  'line' => '1'
-                               }, 'WebService::Validator::HTML::W3C::Error
-                        ),
+                          },
                         # and more and more of these
           ],
           'in' => 'http://google.ca',
@@ -617,16 +630,13 @@ themselves. This key will I<NOT> exist if C<{validator_error}> is present.
 
     foreach my $error ( @{ $results->{errors} } ) {
        printf "line: %s, col: %s\n  error: %s\n\n", 
-                    $error->line,
-                    $error->col,
-                    $error->msg;
+                    @$error{ qw( line col msg ) };
 
     }
 
 This key will I<NOT> exist if C<{validator_error}> is present, otherwise
-it will contain an arrayref, elements of which are
-L<WebService::Validator::HTML::W3C::Error> objects, each having three
-methods:
+it will contain an arrayref, elements of which are hashrefs with the
+following keys:
 
 =over 5
 
@@ -695,19 +705,16 @@ C<validate> method/event will be present intact in the result.
 
 =head2 warnings
 
-    foreach my $warnings ( @{ $results->{warningss} } ) {
-       printf "line: %s, col: %s\n  warnings: %s\n\n", 
-                    $warnings->line,
-                    $warnings->col,
-                    $warnings->msg;
+    foreach my $warning ( @{ $results->{warnings} } ) {
+       printf "line: %s, col: %s\n  warning: %s\n\n", 
+                    @$warning{ qw( line col msg ) };
     }
 
 If C<get_warnings> option is set in the C<validate> method/event (and
 make sure to read its description before setting it!), the C<warnings>
 key will be present in the results, value of which will be an arrayref.
-Each element of that arrayref will be a
-L<WebService::Validator::HTML::W3C::Warning> object, each having three
-methods:
+Each element of that arrayref will be a hashref, each having three
+keys:
 
 =over 5
 

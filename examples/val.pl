@@ -59,7 +59,7 @@ sub got_val {
             print "Contains $results->{num_errors} errors:\n";
             foreach my $error ( @{ $results->{errors} } ) {
                 printf "\n--\nLine: %s Column: %s\n%s\n\n",
-                        $error->line, $error->col, $error->msg;
+                        @$error{ qw( line col msg ) };
             }
         }
     }

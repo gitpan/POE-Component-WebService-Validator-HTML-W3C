@@ -7,7 +7,9 @@ use warnings;
 use POE qw(Component::WebService::Validator::HTML::W3C);
 
 
-my $poco = POE::Component::WebService::Validator::HTML::W3C->spawn;
+my $poco = POE::Component::WebService::Validator::HTML::W3C->spawn(
+    debug => 1,
+);
 
 isa_ok( $poco, 'POE::Component::WebService::Validator::HTML::W3C' );
 can_ok( $poco, qw( validate shutdown session_id ) ); 

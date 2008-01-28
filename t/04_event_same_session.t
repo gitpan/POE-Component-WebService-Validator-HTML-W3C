@@ -18,7 +18,7 @@ chomp $Validator;
 use POE qw(Component::WebService::Validator::HTML::W3C);
 
 
-POE::Component::WebService::Validator::HTML::W3C->spawn( alias => 'val' );
+POE::Component::WebService::Validator::HTML::W3C->spawn( alias => 'val', debug => 1 );
 
 
 POE::Session->create(
@@ -108,15 +108,17 @@ sub validated {
             
             my $fine = 0;
             foreach my $error ( @{ $input->{errors} } ) {
-                $fine++
-                if
-                $error->isa('WebService::Validator::HTML::W3C::Error');
+                $fine++ 
+                    if exists $error->{line}
+                        and exists $error->{col}
+                        and exists $error->{msg};
             }
+            my $err_num = @{ $input->{errors} };
             is(
                 $fine,
-                scalar @{ $input->{errors} },
-                "all elements of {errors} must be ISA"
-                    . " WebService::Validator::HTML::W3C::Error",
+                $err_num,
+                "all elements of {errors} ($err_num in total) must be hashrefs"
+                    . " each having qw(line col msg) keys",
             );
         }
     } # SKIP

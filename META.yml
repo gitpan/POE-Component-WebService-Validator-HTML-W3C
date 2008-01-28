@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                POE-Component-WebService-Validator-HTML-W3C
-version:             0.02
+version:             0.03
 abstract:            a non-blocking L<POE>
 license:             ~
 author:              

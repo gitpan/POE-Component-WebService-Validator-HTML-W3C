@@ -11,7 +11,7 @@ use warnings;
 use POE qw(Component::WebService::Validator::HTML::W3C);
 
 
-POE::Component::WebService::Validator::HTML::W3C->spawn( alias => 'val' );
+POE::Component::WebService::Validator::HTML::W3C->spawn( alias => 'val',  debug => 1 );
 
 POE::Session->create(
     package_states => [

@@ -1,5 +1,13 @@
 Revision history for Perl extension POE::Component::WebService::Validator::HTML::W3C.
 
+0.03  Sun Jan 27 22:47:39 2008
+    - FAILs still persist, could not find an issue
+        as it tests out perfectly for me. Changed
+        {errors} and {warnings} to contain hashrefs
+        instead of ::Error and ::Warnings objects.
+        Hopefully this will help. Sorry for such 
+        a change.
+
 0.02  Mon Jan 19 8:50:39 2008
     - Got FAILs from CPAN testers, updated
         testsuit to include more verbose
