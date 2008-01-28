@@ -1,5 +1,13 @@
 Revision history for Perl extension POE::Component::WebService::Validator::HTML::W3C.
 
+0.03  Mon Jan 28 06:10:00 2008
+    - Now I feel stupid for making changes in 0.03
+	the fails were due to XML::XPath not being
+	installed >_<. Oh well, IMO the hashrefs
+	are simplier to use than objects in this case.
+	Added XML::XPath as prerequisite. Might
+	make it optional in later versions
+
 0.03  Sun Jan 27 22:47:39 2008
     - FAILs still persist, could not find an issue
         as it tests out perfectly for me. Changed

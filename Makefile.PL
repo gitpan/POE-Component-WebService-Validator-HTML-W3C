@@ -29,7 +29,8 @@ WriteMakefile(
         'POE::Filter::Reference' => 1.2187,
         'POE::Filter::Line'      => 1.1920,
         'WebService::Validator::HTML::W3C' => 0.22,
-    'Carp'             => 1.04,
+   	 'Carp'             => 1.04,
+	'XML::XPath'		=> 1.13,
     },
     
     ($] >= 5.005 ?

@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                POE-Component-WebService-Validator-HTML-W3C
-version:             0.03
+version:             0.04
 abstract:            a non-blocking L<POE>
 license:             ~
 author:              
@@ -15,6 +15,7 @@ requires:
     POE::Wheel::Run:               1.2179
     Test::More:                    0.74
     WebService::Validator::HTML::W3C: 0.22
+    XML::XPath:                    1.13
 meta-spec:
     url:     http://module-build.sourceforge.net/META-spec-v1.3.html
     version: 1.3
