@@ -1,5 +1,8 @@
 Revision history for Perl extension POE::Component::WebService::Validator::HTML::W3C.
 
+0.05  Sat Feb  2 12:28:00 2008
+    - fixed session ID bug
+
 0.03  Mon Jan 28 06:10:00 2008
     - Now I feel stupid for making changes in 0.03
 	the fails were due to XML::XPath not being
