@@ -66,7 +66,7 @@ sub second_val {
             );
             
             skip "Got validator error ($input->{validator_error})"
-                . " skipping input tests for this run", 5;
+                . " skipping input tests for this run", 4;
         }
 
         like(

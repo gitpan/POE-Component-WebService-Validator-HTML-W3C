@@ -1,21 +1,28 @@
---- #YAML:1.0
-name:                POE-Component-WebService-Validator-HTML-W3C
-version:             0.05
-abstract:            a non-blocking L<POE>
-license:             ~
-author:              
-    - Zoffix Znet <zoffix@cpan.org>
-generated_by:        ExtUtils::MakeMaker version 6.42
-distribution_type:   module
-requires:     
-    Carp:                          1.04
-    POE:                           0.9999
-    POE::Filter::Line:             1.192
-    POE::Filter::Reference:        1.2187
-    POE::Wheel::Run:               1.2179
-    Test::More:                    0.74
-    WebService::Validator::HTML::W3C: 0.22
-    XML::XPath:                    1.13
+---
+name: POE-Component-WebService-Validator-HTML-W3C
+version: 0.06
+author:
+  - 'Zoffix Znet <zoffix@cpan.org>'
+abstract: |-
+  a non-blocking L<POE>
+  wrapper around L<WebService::Validator::HTML::W3C>
+license: perl
+resources:
+  license: http://dev.perl.org/licenses/
+requires:
+  Carp: 1.04
+  POE: 0.9999
+  POE::Filter::Line: 1.192
+  POE::Filter::Reference: 1.2187
+  POE::Wheel::Run: 1.2179
+  WebService::Validator::HTML::W3C: 0.22
+build_requires:
+  Test::More: 0
+provides:
+  POE::Component::WebService::Validator::HTML::W3C:
+    file: lib/POE/Component/WebService/Validator/HTML/W3C.pm
+    version: 0.06
+generated_by: Module::Build version 0.2808
 meta-spec:
-    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
-    version: 1.3
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
