@@ -11,6 +11,7 @@ my $builder = Module::Build->new(
         'Test::More' => 0,
     },
     requires => {
+        'XML::XPath'                       => 1.13,
         'Carp'                             => 1.04,
         'POE'                              => 0.9999,
         'POE::Wheel::Run'                  => 1.2179,

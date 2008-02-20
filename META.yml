@@ -1,6 +1,6 @@
 ---
 name: POE-Component-WebService-Validator-HTML-W3C
-version: 0.06
+version: 0.07
 author:
   - 'Zoffix Znet <zoffix@cpan.org>'
 abstract: |-
@@ -16,12 +16,13 @@ requires:
   POE::Filter::Reference: 1.2187
   POE::Wheel::Run: 1.2179
   WebService::Validator::HTML::W3C: 0.22
+  XML::XPath: 1.13
 build_requires:
   Test::More: 0
 provides:
   POE::Component::WebService::Validator::HTML::W3C:
     file: lib/POE/Component/WebService/Validator/HTML/W3C.pm
-    version: 0.06
+    version: 0.07
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html

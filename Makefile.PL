@@ -8,13 +8,14 @@ WriteMakefile
           'EXE_FILES' => [],
           'VERSION_FROM' => 'lib/POE/Component/WebService/Validator/HTML/W3C.pm',
           'PREREQ_PM' => {
-                           'Test::More' => 0,
                            'POE::Wheel::Run' => '1.2179',
-                           'WebService::Validator::HTML::W3C' => '0.22',
                            'POE::Filter::Reference' => '1.2187',
                            'POE::Filter::Line' => '1.192',
-                           'POE' => '0.9999',
-                           'Carp' => '1.04'
+                           'Carp' => '1.04',
+                           'Test::More' => 0,
+                           'WebService::Validator::HTML::W3C' => '0.22',
+                           'XML::XPath' => '1.13',
+                           'POE' => '0.9999'
                          }
         )
 ;

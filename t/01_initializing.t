@@ -1,6 +1,7 @@
 
-use Test::More tests => 7;
+use Test::More tests => 8;
 BEGIN {
+    use_ok('XML::XPath');
     use_ok('Carp');
     use_ok('WebService::Validator::HTML::W3C');
     use_ok('POE');

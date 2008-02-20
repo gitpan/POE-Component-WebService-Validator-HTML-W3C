@@ -1,5 +1,35 @@
 Revision history for POE-Component-WebService-Validator-HTML-W3C
 
-0.01    Date/time
+0.07  Wed Feb 20 18:00:00 2008
+    - fixed failing tests.
+
+0.06  Tue Feb 19 18:00:00 2008
+    - fixed distro packaging.
+
+0.05  Sat Feb  2 12:28:00 2008
+    - fixed session ID bug
+
+0.03  Mon Jan 28 06:10:00 2008
+    - Now I feel stupid for making changes in 0.03
+        the fails were due to XML::XPath not being
+        installed >_<. Oh well, IMO the hashrefs
+        are simplier to use than objects in this case.
+        Added XML::XPath as prerequisite. Might
+        make it optional in later versions
+
+0.03  Sun Jan 27 22:47:39 2008
+    - FAILs still persist, could not find an issue
+        as it tests out perfectly for me. Changed
+        {errors} and {warnings} to contain hashrefs
+        instead of ::Error and ::Warnings objects.
+        Hopefully this will help. Sorry for such 
+        a change.
+
+0.02  Mon Jan 19 8:50:39 2008
+    - Got FAILs from CPAN testers, updated
+        testsuit to include more verbose
+        output if Auto-smoker is used
+
+0.01  Mon Jan 14 22:52:39 2008
         First version, released on an unsuspecting world.
 
