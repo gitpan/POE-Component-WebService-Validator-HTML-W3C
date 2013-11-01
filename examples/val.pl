@@ -5,9 +5,9 @@ use warnings;
 
 # PLEASE: install local validator and change the line below
 my $Validator = 'http://validator.w3.org/check';
-
+use lib qw(../lib lib);
 # use the PoCo along with POE goodies
-use POE qw(Component::WebService::Validator::HTML::W3C);
+use POE (qw(Component::WebService::Validator::HTML::W3C));
 
 # for the sake of simplicity we will validate all the files from command line
 unless ( @ARGV ) {

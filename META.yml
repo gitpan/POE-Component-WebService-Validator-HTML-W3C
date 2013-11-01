@@ -1,14 +1,22 @@
 ---
-name: POE-Component-WebService-Validator-HTML-W3C
-version: 0.07
+abstract: 'a non-blocking L<POE>'
 author:
   - 'Zoffix Znet <zoffix@cpan.org>'
-abstract: |-
-  a non-blocking L<POE>
-  wrapper around L<WebService::Validator::HTML::W3C>
+build_requires:
+  Test::More: 0
+configure_requires:
+  Module::Build: 0
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4007, CPAN::Meta::Converter version 2.132830'
 license: perl
-resources:
-  license: http://dev.perl.org/licenses/
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: POE-Component-WebService-Validator-HTML-W3C
+provides:
+  POE::Component::WebService::Validator::HTML::W3C:
+    file: lib/POE/Component/WebService/Validator/HTML/W3C.pm
+    version: 0.08
 requires:
   Carp: 1.04
   POE: 0.9999
@@ -17,13 +25,7 @@ requires:
   POE::Wheel::Run: 1.2179
   WebService::Validator::HTML::W3C: 0.22
   XML::XPath: 1.13
-build_requires:
-  Test::More: 0
-provides:
-  POE::Component::WebService::Validator::HTML::W3C:
-    file: lib/POE/Component/WebService/Validator/HTML/W3C.pm
-    version: 0.07
-generated_by: Module::Build version 0.2808
-meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+  perl: 5.006
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.08

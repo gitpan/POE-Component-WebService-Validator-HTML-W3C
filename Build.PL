@@ -10,6 +10,7 @@ my $builder = Module::Build->new(
     build_requires => {
         'Test::More' => 0,
     },
+    configure_requires => { 'Module::Build' => 0 },
     requires => {
         'XML::XPath'                       => 1.13,
         'Carp'                             => 1.04,
@@ -18,6 +19,7 @@ my $builder = Module::Build->new(
         'POE::Filter::Reference'           => 1.2187,
         'POE::Filter::Line'                => 1.1920,
         'WebService::Validator::HTML::W3C' => 0.22,
+        perl                               => '5.006',
     },
     add_to_cleanup      => [ 'POE-Component-WebService-Validator-HTML-W3C-*' ],
     create_makefile_pl => 'traditional',

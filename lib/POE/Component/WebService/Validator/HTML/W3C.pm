@@ -3,10 +3,10 @@ package POE::Component::WebService::Validator::HTML::W3C;
 use warnings;
 use strict;
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 use WebService::Validator::HTML::W3C;
-use POE qw( Wheel::Run  Filter::Reference  Filter::Line);
+use POE (qw( Wheel::Run  Filter::Reference  Filter::Line));
 use Carp;
 
 sub spawn {

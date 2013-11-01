@@ -2,6 +2,7 @@ Build.PL
 Changes
 MANIFEST
 README
+LICENSE
 lib/POE/Component/WebService/Validator/HTML/W3C.pm
 examples/val.pl
 t/pod-coverage.t
@@ -16,3 +17,4 @@ t/03_method_other_session.t
 t/kwalitee.t
 Makefile.PL
 META.yml
+META.json
